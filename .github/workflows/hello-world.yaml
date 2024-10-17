@@ -38,4 +38,11 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+      - name: Writing to Workflow log
+        run: |
+          echo "Writing to Workflow Log"
+          echo "::group::Writing to the log"
+          echo "::notice file=starter.yml,line=169,col=19,endColumn=22::Writing a notice"
+          echo "::Warning file=starter.yml,line=171,col=19,endColumn=22::Writing a Warning"
+          echo "::endgroup::"
     
